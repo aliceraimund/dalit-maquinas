@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+:root {
+  --cor-primaria: #F5C430;        /* amarelo ouro — botões, destaques, badges */
+  --cor-primaria-hover: #E0B020;  /* amarelo escuro — hover de botões */
+  --cor-fundo: #FFFFFF;           /* branco — fundo das páginas */
+  --cor-fundo-suave: #FAFAFA;     /* off-white — cards, seções alternadas */
+  --cor-texto: #111111;           /* preto — títulos principais */
+  --cor-texto-suave: #4B5563;     /* chumbo — textos secundários, labels */
+  --cor-borda: #E5E7EB;           /* cinza claro — bordas de cards */
+  --cor-nav-fundo: #111111;       /* preto — fundo do nav e footer */
+  --cor-nav-texto: #FFFFFF;       /* branco — texto no nav e footer */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
