@@ -1,6 +1,7 @@
 -- ============================================================
 -- Tabela `maquinas` + políticas RLS
--- Execute no SQL Editor do Supabase.
+-- Aplicada automaticamente pela integração GitHub do Supabase.
+-- (Também pode ser executada manualmente no SQL Editor.)
 -- ============================================================
 
 CREATE TABLE maquinas (

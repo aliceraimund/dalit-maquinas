@@ -29,7 +29,7 @@ Antes de rodar, substitua os tokens abaixo em todo o projeto (um find & replace 
 
 1. **Supabase**
    - Crie um projeto em [supabase.com](https://supabase.com)
-   - Execute o SQL de `supabase/schema.sql` no SQL Editor (cria a tabela `maquinas`, as políticas RLS e o bucket público `maquinas`)
+   - O SQL fica em `supabase/migrations/` — com a integração GitHub do Supabase conectada ao repositório, as migrações são aplicadas automaticamente a cada push. Sem a integração, execute o conteúdo de `supabase/migrations/20260712000000_criar_maquinas.sql` no SQL Editor (cria a tabela `maquinas`, as políticas RLS e o bucket público `maquinas`)
    - Crie o usuário admin em *Authentication → Users → Add user* (email + senha)
 
 2. **Ambiente**
