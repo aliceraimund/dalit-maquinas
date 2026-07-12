@@ -21,9 +21,8 @@ Antes de rodar, substitua os tokens abaixo em todo o projeto (um find & replace 
 | `{{WHATSAPP}}` | WhatsApp no formato `55XXXXXXXXXXX` |
 | `{{TELEFONE}}` | Telefone exibido no rodapé |
 | `{{EMAIL}}` | E-mail exibido no rodapé |
-| `{{SUPABASE_URL}}` | URL do projeto Supabase |
-| `{{SUPABASE_ANON_KEY}}` | Chave anônima (publishable) do Supabase |
-| `{{SUPABASE_HOSTNAME}}` | Hostname do Supabase (ex: `xxxx.supabase.co`) — usado no `next.config.ts` |
+
+Os dados do Supabase já estão configurados (projeto `dalit-maquinas`, ref `ivnpjjuwpywsvyyguulk`) em `.env.local.example` e `next.config.ts`.
 
 ## Configuração
 
