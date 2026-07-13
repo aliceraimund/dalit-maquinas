@@ -34,7 +34,7 @@ export default function PriceDisplay({ maquina, compact = false }: PriceDisplayP
               {mostraLocacao ? 'Venda: ' : ''}Consultar
             </p>
           ) : (
-            <p className="text-sm font-bold text-[var(--cor-texto)]">
+            <p className="text-lg font-extrabold text-[var(--cor-texto)]">
               {formatCurrency(maquina.preco_venda!)}
             </p>
           ))}
