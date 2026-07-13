@@ -146,7 +146,7 @@ export default function AdminMaquinaList({ maquinas }: AdminMaquinaListProps) {
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="font-semibold text-[var(--cor-texto)]">{maquina.nome}</p>
                   {maquina.destaque && (
-                    <span className="rounded-full bg-[var(--cor-primaria)] px-2 py-0.5 text-[10px] font-semibold text-[var(--cor-texto)]">
+                    <span className="rounded-full bg-[var(--cor-primaria)] px-2 py-0.5 text-[10px] font-semibold text-[var(--cor-primaria-texto)]">
                       Destaque
                     </span>
                   )}
@@ -193,7 +193,7 @@ export default function AdminMaquinaList({ maquinas }: AdminMaquinaListProps) {
                 </Link>
                 <Link
                   href={`/admin/maquinas/${maquina.id}/editar`}
-                  className={`${acaoClass} bg-[var(--cor-primaria)] font-semibold text-[var(--cor-texto)] hover:bg-[var(--cor-primaria-hover)]`}
+                  className={`${acaoClass} bg-[var(--cor-primaria)] font-semibold text-[var(--cor-primaria-texto)] hover:bg-[var(--cor-primaria-hover)]`}
                 >
                   Editar
                 </Link>

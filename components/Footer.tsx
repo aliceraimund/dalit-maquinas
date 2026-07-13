@@ -15,7 +15,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {'GeraPeças Brasil'}. Todos os direitos reservados.
           </p>
           <p className="mt-1">
-            <Link href="/admin/login" className="text-gray-500 transition-colors hover:text-[var(--cor-primaria)]">
+            <Link href="/admin/login" className="text-gray-500 transition-colors hover:text-white">
               Área administrativa
             </Link>
           </p>

@@ -27,14 +27,14 @@ export default function AdminNav({ email }: AdminNavProps) {
           </Link>
           <Link
             href="/admin"
-            className="text-sm text-gray-300 transition-colors hover:text-[var(--cor-primaria)]"
+            className="text-sm text-gray-300 transition-colors hover:text-white"
           >
             Máquinas
           </Link>
           <Link
             href="/"
             target="_blank"
-            className="text-sm text-gray-300 transition-colors hover:text-[var(--cor-primaria)]"
+            className="text-sm text-gray-300 transition-colors hover:text-white"
           >
             Ver site
           </Link>
@@ -44,7 +44,7 @@ export default function AdminNav({ email }: AdminNavProps) {
           <button
             type="button"
             onClick={handleLogout}
-            className="rounded-lg border border-gray-600 px-3 py-1.5 text-sm text-gray-300 transition-colors hover:border-[var(--cor-primaria)] hover:text-[var(--cor-primaria)]"
+            className="rounded-lg border border-gray-600 px-3 py-1.5 text-sm text-gray-300 transition-colors hover:border-white hover:text-white"
           >
             Sair
           </button>

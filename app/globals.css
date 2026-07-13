@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 
 :root {
-  --cor-primaria: #F5C430;        /* amarelo ouro — botões, destaques, badges */
-  --cor-primaria-hover: #E0B020;  /* amarelo escuro — hover de botões */
+  --cor-primaria: #274A63;        /* azul petróleo — botões, destaques, badges */
+  --cor-primaria-hover: #1D3A4F;  /* azul mais escuro — hover de botões */
+  --cor-primaria-texto: #FFFFFF;  /* texto sobre a cor primária */
   --cor-fundo: #FFFFFF;           /* branco — fundo das páginas */
   --cor-fundo-suave: #FAFAFA;     /* off-white — cards, seções alternadas */
   --cor-texto: #111111;           /* preto — títulos principais */

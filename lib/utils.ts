@@ -25,7 +25,7 @@ export const STATUS_LABELS: Record<Status, string> = {
 }
 
 export const STATUS_COLORS: Record<Status, string> = {
-  disponivel: 'bg-[#FDF0C2] text-[var(--cor-texto)]',
+  disponivel: 'bg-[#DCE9F5] text-[#1D3A4F]',
   reservado: 'bg-[var(--cor-borda)] text-[var(--cor-texto-suave)]',
   vendido: 'bg-[var(--cor-texto)] text-white',
   em_manutencao: 'bg-[var(--cor-fundo-suave)] text-[var(--cor-texto-suave)] border border-[var(--cor-borda)]',
@@ -38,9 +38,9 @@ export const DISPONIVEL_LABELS: Record<DisponivelPara, string> = {
 }
 
 export const DISPONIVEL_COLORS: Record<DisponivelPara, string> = {
-  venda: 'bg-[var(--cor-primaria)] text-[var(--cor-texto)]',
+  venda: 'bg-[var(--cor-primaria)] text-[var(--cor-primaria-texto)]',
   locacao: 'bg-[var(--cor-texto)] text-white',
-  ambos: 'bg-[var(--cor-primaria)] text-[var(--cor-texto)]',
+  ambos: 'bg-[var(--cor-primaria)] text-[var(--cor-primaria-texto)]',
 }
 
 export const CATEGORIA_LABELS: Record<Categoria, string> = {

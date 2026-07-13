@@ -50,7 +50,7 @@ export default function MaquinaCard({ maquina }: MaquinaCardProps) {
         )}
         <div className="absolute left-2 top-2 flex flex-wrap gap-1">
           {maquina.destaque && (
-            <span className="rounded-full bg-[var(--cor-primaria)] px-2 py-0.5 text-xs font-semibold text-[var(--cor-texto)]">
+            <span className="rounded-full bg-[var(--cor-primaria)] px-2 py-0.5 text-xs font-semibold text-[var(--cor-primaria-texto)]">
               Destaque
             </span>
           )}

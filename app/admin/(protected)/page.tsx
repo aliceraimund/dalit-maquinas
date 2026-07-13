@@ -27,7 +27,7 @@ export default async function AdminPage() {
         </h1>
         <Link
           href="/admin/maquinas/novo"
-          className="rounded-lg bg-[var(--cor-primaria)] px-5 py-2.5 text-sm font-semibold text-[var(--cor-texto)] transition-colors hover:bg-[var(--cor-primaria-hover)]"
+          className="rounded-lg bg-[var(--cor-primaria)] px-5 py-2.5 text-sm font-semibold text-[var(--cor-primaria-texto)] transition-colors hover:bg-[var(--cor-primaria-hover)]"
         >
           + Nova máquina
         </Link>

@@ -355,7 +355,7 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
           multiple
           onChange={handleUpload}
           disabled={enviandoFotos}
-          className="mb-4 block w-full text-sm text-[var(--cor-texto-suave)] file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-[var(--cor-primaria)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[var(--cor-texto)] hover:file:bg-[var(--cor-primaria-hover)]"
+          className="mb-4 block w-full text-sm text-[var(--cor-texto-suave)] file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-[var(--cor-primaria)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[var(--cor-primaria-texto)] hover:file:bg-[var(--cor-primaria-hover)]"
         />
         {enviandoFotos && <p className="mb-3 text-sm text-[var(--cor-texto-suave)]">Enviando fotos…</p>}
 
@@ -381,7 +381,7 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
                 <RetryImage src={foto} alt={`Foto ${i + 1}`} fill unoptimized sizes="150px" className="object-cover" />
 
                 {i === 0 && (
-                  <span className="absolute left-1 top-1 rounded bg-[var(--cor-primaria)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--cor-texto)]">
+                  <span className="absolute left-1 top-1 rounded bg-[var(--cor-primaria)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--cor-primaria-texto)]">
                     Principal
                   </span>
                 )}
@@ -449,7 +449,7 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
         <button
           type="submit"
           disabled={salvando || enviandoFotos}
-          className="rounded-lg bg-[var(--cor-primaria)] px-6 py-2.5 text-sm font-semibold text-[var(--cor-texto)] transition-colors hover:bg-[var(--cor-primaria-hover)] disabled:opacity-60"
+          className="rounded-lg bg-[var(--cor-primaria)] px-6 py-2.5 text-sm font-semibold text-[var(--cor-primaria-texto)] transition-colors hover:bg-[var(--cor-primaria-hover)] disabled:opacity-60"
         >
           {salvando ? 'Salvando…' : maquina ? 'Salvar alterações' : 'Cadastrar máquina'}
         </button>
