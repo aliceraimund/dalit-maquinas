@@ -184,11 +184,11 @@ export default async function Home({ searchParams }: HomeProps) {
               <RetryImage
                 src="/logo.png"
                 alt="GeraBrasil"
-                width={280}
-                height={187}
+                width={420}
+                height={280}
                 unoptimized
                 priority
-                className="h-auto w-52 sm:w-64 [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.9))_drop-shadow(0_2px_30px_rgba(255,255,255,0.55))]"
+                className="h-auto w-72 sm:w-96 [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.9))_drop-shadow(0_2px_30px_rgba(255,255,255,0.55))]"
                 fallback={
                   <span className="block py-6 text-center text-2xl font-black tracking-tight text-white">
                     GERA BRASIL
