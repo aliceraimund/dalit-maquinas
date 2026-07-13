@@ -16,7 +16,7 @@ export default function WhatsAppFloat() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3">
       {mostraBalao && !fechado && (
-        <div className="relative max-w-[220px] rounded-2xl rounded-br-sm border border-[var(--cor-borda)] bg-white px-4 py-3 shadow-xl [animation:surgir-balao_0.3s_ease-out]">
+        <div className="relative hidden max-w-[220px] rounded-2xl rounded-br-sm border border-[var(--cor-borda)] bg-white px-4 py-3 shadow-xl [animation:surgir-balao_0.3s_ease-out] md:block">
           <button
             type="button"
             onClick={() => setFechado(true)}

@@ -30,16 +30,19 @@ body {
 /* Hero: azul escuro no topo esmaecendo para branco na base, fundindo
    com a barra de filtros logo abaixo — tudo em CSS, sem imagem externa. */
 .hero-bg {
+  /* O esmaecido usa medidas fixas (px) a partir da base: assim ele fica
+     sempre na altura dos cards de categoria, mesmo no mobile, onde o
+     hero é bem mais alto. */
   background:
     radial-gradient(55% 70% at 82% 18%, rgba(255, 196, 46, 0.08), transparent 65%),
     linear-gradient(
       to top,
-      #ffffff 0%,
-      rgba(255, 255, 255, 0.9) 10%,
-      rgba(255, 255, 255, 0.45) 26%,
-      rgba(255, 255, 255, 0) 52%
+      #ffffff 0px,
+      rgba(255, 255, 255, 0.9) 70px,
+      rgba(255, 255, 255, 0.45) 180px,
+      rgba(255, 255, 255, 0) 340px
     ),
-    linear-gradient(180deg, #14293a 0%, #23445c 55%, #3a607f 100%);
+    linear-gradient(180deg, #14293a 0%, #1e3d54 70%, #2c516e 100%);
 }
 
 /* Pulso de atenção do botão flutuante de WhatsApp */

@@ -43,41 +43,40 @@ const ICONES_CATEGORIA: Record<Categoria, React.ReactNode> = {
 
 const DIFERENCIAIS = [
   {
-    titulo: 'Frete para todo o Brasil',
-    texto: 'Bons preços de frete com seguro para qualquer região do país.',
+    titulo: 'Prevenção antes da falha',
+    texto: 'Manutenções programadas com checklist completo, para seus geradores estarem sempre prontos e sem custos inesperados.',
     icone: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <path d="M1 8h13v8H1zM14 10h4l3 3v3h-7z" />
-        <circle cx="5" cy="18" r="2" />
-        <circle cx="17" cy="18" r="2" />
+        <rect x="8" y="2" width="8" height="4" rx="1" />
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 13l2 2 4-4" />
       </svg>
     ),
   },
   {
-    titulo: 'Vistoria técnica presencial',
-    texto: 'Inspecione o equipamento no local ou envie uma assistência técnica de sua confiança.',
+    titulo: 'Suporte 24 horas',
+    texto: 'Energia não tem hora para falhar: equipe pronta para agir rápido em qualquer emergência, a qualquer horário.',
     icone: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35M8 11h6M11 8v6" />
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
       </svg>
     ),
   },
   {
-    titulo: 'Serviços especializados',
-    texto: 'Revisão, instalação, start-up e contrato de manutenção preventiva.',
+    titulo: 'Resolução rápida',
+    texto: 'Falhou, chamou: especialistas identificam e resolvem o problema com rapidez, para sua operação não parar.',
+    icone: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+    ),
+  },
+  {
+    titulo: 'Mais durabilidade, menos preocupação',
+    texto: 'Somente peças originais, compatíveis e testadas: vida útil prolongada e economia no dia a dia.',
     icone: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-      </svg>
-    ),
-  },
-  {
-    titulo: 'Negociação direta',
-    texto: 'Atendimento rápido pelo WhatsApp para venda e locação, sem intermediários.',
-    icone: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
       </svg>
     ),
   },
@@ -176,6 +175,18 @@ export default async function Home({ searchParams }: HomeProps) {
                   Falar no WhatsApp
                 </a>
               </div>
+
+              <p className="mt-5 text-sm text-white/70">
+                Conheça também nosso site institucional:{' '}
+                <a
+                  href="https://gerabrasil.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white underline underline-offset-4 transition-colors hover:text-[var(--cor-acento)]"
+                >
+                  gerabrasil.com
+                </a>
+              </p>
             </div>
 
             <div className="shrink-0 self-center md:self-auto">
