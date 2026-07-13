@@ -1,6 +1,7 @@
 import FilterTabs from '@/components/FilterTabs'
 import Footer from '@/components/Footer'
 import MaquinaCard from '@/components/MaquinaCard'
+import RetryImage from '@/components/RetryImage'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import { createClient } from '@/lib/supabase/server'
 import { CATEGORIA_LABELS } from '@/lib/utils'
@@ -71,18 +72,37 @@ export default async function Home({ searchParams }: HomeProps) {
     <div className="flex min-h-screen flex-col">
       {/* Hero */}
       <section className="bg-[var(--cor-primaria)] text-[var(--cor-primaria-texto)]">
-        <div className="mx-auto max-w-6xl px-4 py-14 text-left sm:py-20">
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{'GeraPeças Brasil'}</h1>
-          <p className="mt-3 max-w-2xl text-lg font-medium sm:text-xl">{'Especialistas em geradores de energia — venda, locação e manutenção'}</p>
-          <div className="mt-8 flex flex-wrap items-start justify-start gap-6 sm:gap-10">
-            {CATEGORIAS_VALIDAS.map((cat) => (
-              <div key={cat} className="flex flex-col items-center gap-1.5">
-                {ICONES_CATEGORIA[cat]}
-                <span className="text-xs font-semibold uppercase tracking-wide">
-                  {CATEGORIA_LABELS[cat]}
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 text-left sm:py-20 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{'GeraPeças Brasil'}</h1>
+            <p className="mt-3 max-w-2xl text-lg font-medium sm:text-xl">{'Especialistas em geradores de energia — venda, locação e manutenção'}</p>
+            <div className="mt-8 flex flex-wrap items-start justify-start gap-6 sm:gap-10">
+              {CATEGORIAS_VALIDAS.map((cat) => (
+                <div key={cat} className="flex flex-col items-center gap-1.5">
+                  {ICONES_CATEGORIA[cat]}
+                  <span className="text-xs font-semibold uppercase tracking-wide">
+                    {CATEGORIA_LABELS[cat]}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Balão branco: a escrita da logo é azul (mesma cor do fundo do hero) */}
+          <div className="shrink-0 self-center rounded-2xl bg-white px-6 py-4 shadow-lg md:self-auto">
+            <RetryImage
+              src="/logo.png"
+              alt="GeraBrasil"
+              width={280}
+              height={187}
+              unoptimized
+              priority
+              className="h-auto w-52 sm:w-64"
+              fallback={
+                <span className="block py-6 text-center text-2xl font-black tracking-tight text-[var(--cor-primaria)]">
+                  GERA BRASIL
                 </span>
-              </div>
-            ))}
+              }
+            />
           </div>
         </div>
       </section>
