@@ -72,8 +72,8 @@ export default async function Home({ searchParams }: HomeProps) {
       {/* Hero */}
       <section className="bg-[var(--cor-primaria)] text-[var(--cor-texto)]">
         <div className="mx-auto max-w-6xl px-4 py-14 text-center sm:py-20">
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{'{{NOME_EMPRESA}}'}</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-lg font-medium sm:text-xl">{'{{SLOGAN}}'}</p>
+          <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{'GeraPeças Brasil'}</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-lg font-medium sm:text-xl">{'Especialistas em geradores de energia — venda, locação e manutenção'}</p>
           <div className="mt-8 flex flex-wrap items-start justify-center gap-6 sm:gap-10">
             {CATEGORIAS_VALIDAS.map((cat) => (
               <div key={cat} className="flex flex-col items-center gap-1.5">

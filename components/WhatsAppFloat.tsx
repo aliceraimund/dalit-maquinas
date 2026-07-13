@@ -1,4 +1,4 @@
-const WHATSAPP = '{{WHATSAPP}}'
+const WHATSAPP = '5511995998514'
 
 export default function WhatsAppFloat() {
   return (

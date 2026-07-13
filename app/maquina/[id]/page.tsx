@@ -17,7 +17,7 @@ import {
 import type { Maquina } from '@/types/maquina'
 
 const SITE_URL = '{{SITE_URL}}'
-const WHATSAPP = '{{WHATSAPP}}'
+const WHATSAPP = '5511995998514'
 
 interface MaquinaPageProps {
   params: Promise<{ id: string }>
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: MaquinaPageProps): Promise<Me
 
   const descricao =
     maquina.descricao?.slice(0, 160) ??
-    `${maquina.tipo}${maquina.marca ? ` ${maquina.marca}` : ''}${maquina.modelo ? ` ${maquina.modelo}` : ''} — {{NOME_EMPRESA}}`
+    `${maquina.tipo}${maquina.marca ? ` ${maquina.marca}` : ''}${maquina.modelo ? ` ${maquina.modelo}` : ''} — GeraPeças Brasil`
 
   return {
     title: maquina.nome,
@@ -77,6 +77,8 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
       ? { label: 'Horas de uso', valor: `${new Intl.NumberFormat('pt-BR').format(maquina.horas_uso)} h` }
       : null,
     maquina.potencia ? { label: 'Potência', valor: maquina.potencia } : null,
+    maquina.motor ? { label: 'Motor', valor: maquina.motor } : null,
+    maquina.alternador ? { label: 'Alternador', valor: maquina.alternador } : null,
     maquina.capacidade ? { label: 'Capacidade', valor: maquina.capacidade } : null,
     maquina.peso_kg != null
       ? { label: 'Peso', valor: `${new Intl.NumberFormat('pt-BR').format(maquina.peso_kg)} kg` }
@@ -121,7 +123,7 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
       <header className="bg-[var(--cor-nav-fundo)] text-[var(--cor-nav-texto)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="text-lg font-bold">
-            {'{{NOME_EMPRESA}}'}
+            {'GeraPeças Brasil'}
           </Link>
           <Link
             href="/"
@@ -205,7 +207,7 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
               </a>
 
               <p className="text-center text-sm font-bold text-[var(--cor-texto)]">
-                {'{{NOME_EMPRESA}}'}
+                {'GeraPeças Brasil'}
               </p>
             </div>
           </aside>

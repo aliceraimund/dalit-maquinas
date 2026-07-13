@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 const SITE_URL = '{{SITE_URL}}'
-const NOME_EMPRESA = '{{NOME_EMPRESA}}'
+const NOME_EMPRESA = 'GeraPeças Brasil'
 const DESCRICAO =
-  'Venda e locação de máquinas e equipamentos para construção, indústria, agricultura e transporte. Qualidade e confiança para o seu negócio.'
+  'Venda e locação de geradores de energia, máquinas e equipamentos para indústria, construção, agronegócio e transporte. Qualidade e confiança para o seu negócio.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL.startsWith('http') ? SITE_URL : 'http://localhost:3000'),
@@ -33,8 +33,8 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: NOME_EMPRESA,
   url: SITE_URL,
-  telephone: '{{TELEFONE}}',
-  email: '{{EMAIL}}',
+  telephone: '(11) 2668-0200',
+  email: 'contato@gerabrasil.com',
 }
 
 export default function RootLayout({

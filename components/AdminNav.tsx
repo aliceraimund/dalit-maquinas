@@ -23,7 +23,7 @@ export default function AdminNav({ email }: AdminNavProps) {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
         <div className="flex items-center gap-6">
           <Link href="/admin" className="text-lg font-bold">
-            {'{{NOME_EMPRESA}}'}
+            {'GeraPeças Brasil'}
           </Link>
           <Link
             href="/admin"

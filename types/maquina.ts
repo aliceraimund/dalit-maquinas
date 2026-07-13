@@ -14,6 +14,8 @@ export interface Maquina {
   ano: number | null
   horas_uso: number | null
   potencia: string | null
+  motor: string | null
+  alternador: string | null
   capacidade: string | null
   peso_kg: number | null
   disponivel_para: DisponivelPara | null

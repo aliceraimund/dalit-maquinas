@@ -28,6 +28,8 @@ interface FormState {
   ano: string
   horas_uso: string
   potencia: string
+  motor: string
+  alternador: string
   capacidade: string
   peso_kg: string
   disponivel_para: DisponivelPara | ''
@@ -59,6 +61,8 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
     ano: maquina?.ano != null ? String(maquina.ano) : '',
     horas_uso: maquina?.horas_uso != null ? String(maquina.horas_uso) : '',
     potencia: maquina?.potencia ?? '',
+    motor: maquina?.motor ?? '',
+    alternador: maquina?.alternador ?? '',
     capacidade: maquina?.capacidade ?? '',
     peso_kg: maquina?.peso_kg != null ? String(maquina.peso_kg) : '',
     disponivel_para: maquina?.disponivel_para ?? '',
@@ -164,6 +168,8 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
       ano: form.ano ? parseInt(form.ano, 10) : null,
       horas_uso: form.horas_uso ? parseFloat(form.horas_uso) : null,
       potencia: form.potencia.trim() || null,
+      motor: form.motor.trim() || null,
+      alternador: form.alternador.trim() || null,
       capacidade: form.capacidade.trim() || null,
       peso_kg: form.peso_kg ? parseFloat(form.peso_kg) : null,
       disponivel_para: form.disponivel_para || null,
@@ -250,7 +256,15 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
           </div>
           <div>
             <label htmlFor="potencia" className={labelClass}>Potência</label>
-            <input id="potencia" type="text" placeholder="Ex: 150 cv" value={form.potencia} onChange={(e) => set('potencia', e.target.value)} className={inputClass} />
+            <input id="potencia" type="text" placeholder="Ex: 240 kVA, 150 cv" value={form.potencia} onChange={(e) => set('potencia', e.target.value)} className={inputClass} />
+          </div>
+          <div>
+            <label htmlFor="motor" className={labelClass}>Motor</label>
+            <input id="motor" type="text" placeholder="Ex: FPT Iveco, Cummins QST30-G2" value={form.motor} onChange={(e) => set('motor', e.target.value)} className={inputClass} />
+          </div>
+          <div>
+            <label htmlFor="alternador" className={labelClass}>Alternador</label>
+            <input id="alternador" type="text" placeholder="Ex: WEG brushless" value={form.alternador} onChange={(e) => set('alternador', e.target.value)} className={inputClass} />
           </div>
           <div>
             <label htmlFor="capacidade" className={labelClass}>Capacidade</label>

@@ -1,4 +1,4 @@
-# {{NOME_EMPRESA}} — Site de máquinas e equipamentos
+# GeraPeças Brasil — Site de máquinas e equipamentos
 
 Site institucional com catálogo de máquinas (venda e locação) e painel administrativo.
 
@@ -9,26 +9,17 @@ Site institucional com catálogo de máquinas (venda e locação) e painel admin
 - **TypeScript**
 - **Supabase** — banco de dados (Postgres + RLS), autenticação e storage de fotos
 
-## Variáveis do projeto (find & replace)
+## Dados da empresa
 
-Antes de rodar, substitua os tokens abaixo em todo o projeto (um find & replace por token resolve — VS Code ou `grep -rl '{{TOKEN}}' . | xargs sed -i 's/.../.../g'`):
+Os dados da GeraPeças Brasil (nome, slogan, WhatsApp `5511995998514`, telefone, e-mail) e do Supabase (projeto `dalit-maquinas`, ref `ivnpjjuwpywsvyyguulk`) já estão aplicados no código, em `.env.local.example` e `next.config.ts`.
 
-| Token | Descrição |
-| --- | --- |
-| `{{NOME_EMPRESA}}` | Nome da empresa |
-| `{{SLOGAN}}` | Tagline exibida no hero |
-| `{{SITE_URL}}` | URL pública do site (ex: `https://empresa.com.br`) |
-| `{{WHATSAPP}}` | WhatsApp no formato `55XXXXXXXXXXX` |
-| `{{TELEFONE}}` | Telefone exibido no rodapé |
-| `{{EMAIL}}` | E-mail exibido no rodapé |
-
-Os dados do Supabase já estão configurados (projeto `dalit-maquinas`, ref `ivnpjjuwpywsvyyguulk`) em `.env.local.example` e `next.config.ts`.
+**Pendente**: o token `{{SITE_URL}}` (em `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts` e `app/maquina/[id]/page.tsx`) deve ser substituído pela URL definitiva do site quando o deploy for feito — ex: `https://dalit-maquinas.vercel.app` ou o domínio próprio.
 
 ## Configuração
 
 1. **Supabase**
    - Crie um projeto em [supabase.com](https://supabase.com)
-   - O SQL fica em `supabase/migrations/` — com a integração GitHub do Supabase conectada ao repositório, as migrações são aplicadas automaticamente a cada push. Sem a integração, execute o conteúdo de `supabase/migrations/20260712000000_criar_maquinas.sql` no SQL Editor (cria a tabela `maquinas`, as políticas RLS e o bucket público `maquinas`)
+   - O SQL fica em `supabase/migrations/` — com a integração GitHub do Supabase conectada ao repositório, as migrações são aplicadas automaticamente a cada push na `main`. Sem a integração, execute os arquivos da pasta em ordem no SQL Editor (criam a tabela `maquinas`, as políticas RLS e o bucket público `maquinas`)
    - Crie o usuário admin em *Authentication → Users → Add user* (email + senha)
 
 2. **Ambiente**
