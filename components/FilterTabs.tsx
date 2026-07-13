@@ -10,8 +10,6 @@ interface FilterTabsProps {
   busca: string
 }
 
-const CATEGORIAS: (Categoria | null)[] = [null, 'construcao', 'industrial', 'agricola', 'transporte']
-
 const MODALIDADES: { valor: DisponivelPara | null; label: string }[] = [
   { valor: null, label: 'Todas' },
   { valor: 'venda', label: 'Venda' },
@@ -90,20 +88,19 @@ export default function FilterTabs({ categoriaAtiva, modalidadeAtiva, busca }: F
               </Link>
             ))}
           </nav>
-        </div>
 
-        <nav className="flex gap-1.5 overflow-x-auto pb-0.5" aria-label="Filtrar por categoria">
-          {CATEGORIAS.map((cat) => (
+          {categoriaAtiva && (
             <Link
-              key={cat ?? 'todas'}
-              href={buildHref(cat, modalidadeAtiva, busca)}
+              href={buildHref(null, modalidadeAtiva, busca)}
               scroll={false}
-              className={pillClass(categoriaAtiva === cat)}
+              className="flex items-center gap-1.5 whitespace-nowrap rounded-full bg-[var(--cor-fundo-suave)] px-4 py-1.5 text-sm font-medium text-[var(--cor-texto)] transition-colors hover:bg-[var(--cor-borda)]"
+              aria-label={`Remover filtro de ${CATEGORIA_LABELS[categoriaAtiva]}`}
             >
-              {cat ? CATEGORIA_LABELS[cat] : 'Todas'}
+              {CATEGORIA_LABELS[categoriaAtiva]}
+              <span aria-hidden="true" className="text-[var(--cor-texto-suave)]">×</span>
             </Link>
-          ))}
-        </nav>
+          )}
+        </div>
       </div>
     </div>
   )
