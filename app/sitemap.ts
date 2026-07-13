@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { createClient } from '@/lib/supabase/server'
 
-const SITE_URL = '{{SITE_URL}}'
+const SITE_URL = 'https://dalit-maquinas-e8e9.vercel.app'
 
 export const dynamic = 'force-dynamic'
 

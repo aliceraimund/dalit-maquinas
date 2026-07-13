@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-const SITE_URL = '{{SITE_URL}}'
+const SITE_URL = 'https://dalit-maquinas-e8e9.vercel.app'
 const NOME_EMPRESA = 'GeraPeças Brasil'
 const DESCRICAO =
   'Venda e locação de geradores de energia, máquinas e equipamentos para indústria, construção, agronegócio e transporte. Qualidade e confiança para o seu negócio.'
