@@ -13,7 +13,7 @@ Site institucional com catálogo de máquinas (venda e locação) e painel admin
 
 Os dados da GeraPeças Brasil (nome, slogan, WhatsApp `5511995998514`, telefone, e-mail) e do Supabase (projeto `dalit-maquinas`, ref `ivnpjjuwpywsvyyguulk`) já estão aplicados no código, em `.env.local.example` e `next.config.ts`.
 
-O site está publicado em `https://dalit-maquinas-e8e9.vercel.app` (Vercel, deploy automático a cada push na `main`). Se um dia for adotado um domínio próprio, atualize a constante `SITE_URL` em `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts` e `app/maquina/[id]/page.tsx`.
+O site está publicado em `https://gerapecas.vercel.app` (Vercel, deploy automático a cada push na `main`). Se um dia for adotado um domínio próprio, atualize a constante `SITE_URL` em `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts` e `app/maquina/[id]/page.tsx`.
 
 ## Configuração
 

@@ -16,7 +16,7 @@ import {
 } from '@/lib/utils'
 import type { Maquina } from '@/types/maquina'
 
-const SITE_URL = 'https://dalit-maquinas-e8e9.vercel.app'
+const SITE_URL = 'https://gerapecas.vercel.app'
 const WHATSAPP = '5511995998514'
 
 interface MaquinaPageProps {

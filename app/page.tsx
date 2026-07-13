@@ -188,9 +188,10 @@ export default async function Home({ searchParams }: HomeProps) {
               </div>
             </div>
 
-            <div className="relative shrink-0 self-center md:self-auto">
-              <div className="absolute -inset-5 rounded-[2.5rem] bg-white/10 blur-2xl" aria-hidden="true" />
-              <div className="relative rounded-3xl bg-white px-7 py-5 shadow-2xl ring-4 ring-white/15 transition-transform duration-300 md:rotate-2 md:hover:rotate-0">
+            <div className="shrink-0 self-center md:self-auto">
+              {/* Balão branco em gradiente radial: sólido no centro (onde está a
+                  escrita azul da logo) e esmaecendo nas bordas */}
+              <div className="bg-[radial-gradient(closest-side,rgba(255,255,255,1)_55%,rgba(255,255,255,0.9)_72%,rgba(255,255,255,0)_100%)] p-12 sm:p-14">
                 <RetryImage
                   src="/logo.png"
                   alt="GeraBrasil"
