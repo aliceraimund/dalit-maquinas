@@ -44,7 +44,7 @@ export default function FilterTabs({ categoriaAtiva, modalidadeAtiva, busca }: F
     <div className="sticky top-0 z-40 border-b border-[var(--cor-borda)] bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3">
         <div className="flex flex-wrap items-center gap-3">
-          <form action="/" className="flex min-w-0 flex-1 items-center gap-2 sm:max-w-sm">
+          <form action="/" className="flex w-full items-center gap-2 sm:w-auto sm:min-w-0 sm:max-w-sm sm:flex-1">
             {categoriaAtiva && <input type="hidden" name="categoria" value={categoriaAtiva} />}
             {modalidadeAtiva && <input type="hidden" name="modalidade" value={modalidadeAtiva} />}
             <div className="relative min-w-0 flex-1">
