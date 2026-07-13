@@ -8,8 +8,6 @@ interface FilterTabsProps {
   categoriaAtiva: Categoria | null
   modalidadeAtiva: DisponivelPara | null
   busca: string
-  contagens: Record<Categoria, number>
-  total: number
 }
 
 const CATEGORIAS: (Categoria | null)[] = [null, 'construcao', 'industrial', 'agricola', 'transporte']
@@ -41,13 +39,7 @@ function pillClass(ativa: boolean): string {
   }`
 }
 
-export default function FilterTabs({
-  categoriaAtiva,
-  modalidadeAtiva,
-  busca,
-  contagens,
-  total,
-}: FilterTabsProps) {
+export default function FilterTabs({ categoriaAtiva, modalidadeAtiva, busca }: FilterTabsProps) {
   return (
     <div className="sticky top-0 z-40 border-b border-[var(--cor-borda)] bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3">
@@ -109,7 +101,6 @@ export default function FilterTabs({
               className={pillClass(categoriaAtiva === cat)}
             >
               {cat ? CATEGORIA_LABELS[cat] : 'Todas'}
-              <span className="ml-1.5 text-xs opacity-70">{cat ? contagens[cat] : total}</span>
             </Link>
           ))}
         </nav>

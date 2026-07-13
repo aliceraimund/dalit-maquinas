@@ -116,25 +116,8 @@ export default async function Home({ searchParams }: HomeProps) {
     )
   }
 
-  const [{ data }, { data: todasPublicadas }] = await Promise.all([
-    query,
-    supabase.from('maquinas').select('categorias').eq('publicado', true),
-  ])
-
+  const { data } = await query
   const maquinas = (data ?? []) as Maquina[]
-
-  const contagens: Record<Categoria, number> = {
-    construcao: 0,
-    industrial: 0,
-    agricola: 0,
-    transporte: 0,
-  }
-  for (const m of todasPublicadas ?? []) {
-    for (const c of (m.categorias ?? []) as Categoria[]) {
-      if (c in contagens) contagens[c]++
-    }
-  }
-  const total = (todasPublicadas ?? []).length
 
   const filtrosAtivos = Boolean(categoria || modalidade || busca)
 
@@ -208,33 +191,24 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
           </div>
 
-          {/* Cards de categoria clicáveis (filtro rápido) — claros, pois ficam
+          {/* Cards das áreas atendidas (filtro rápido) — claros, pois ficam
               na zona esmaecida do hero */}
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {CATEGORIAS_VALIDAS.map((cat) => (
               <Link
                 key={cat}
                 href={`/?categoria=${cat}#catalogo`}
-                className="group rounded-xl border border-[var(--cor-borda)] bg-white/90 p-4 shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[var(--cor-primaria)] hover:shadow-md"
+                className="group flex items-center gap-3 rounded-xl border border-[var(--cor-borda)] bg-white/90 p-4 shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[var(--cor-primaria)] hover:shadow-md"
               >
                 <span className="text-[var(--cor-primaria)]">{ICONES_CATEGORIA[cat]}</span>
-                <p className="mt-2 font-bold text-[var(--cor-texto)]">{CATEGORIA_LABELS[cat]}</p>
-                <p className="text-xs text-[var(--cor-texto-suave)]">
-                  {contagens[cat] === 1 ? '1 equipamento' : `${contagens[cat]} equipamentos`}
-                </p>
+                <p className="font-bold text-[var(--cor-texto)]">{CATEGORIA_LABELS[cat]}</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <FilterTabs
-        categoriaAtiva={categoria}
-        modalidadeAtiva={modalidade}
-        busca={busca}
-        contagens={contagens}
-        total={total}
-      />
+      <FilterTabs categoriaAtiva={categoria} modalidadeAtiva={modalidade} busca={busca} />
 
       <main id="catalogo" className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {maquinas.length === 0 ? (
