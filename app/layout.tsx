@@ -4,7 +4,7 @@ import './globals.css'
 const SITE_URL = 'https://gerapecas.vercel.app'
 const NOME_EMPRESA = 'Gera Brasil'
 const DESCRICAO =
-  'Quando tudo para, você precisa de uma solução que funciona. Grupos geradores de alta capacidade para hospitais, indústrias e condomínios — venda, locação e manutenção.'
+  'Quando tudo para, você precisa de uma solução que funciona. Grupos geradores de alta capacidade para hospitais, indústrias e condomínios: venda, locação e manutenção.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL.startsWith('http') ? SITE_URL : 'http://localhost:3000'),

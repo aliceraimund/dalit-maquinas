@@ -59,7 +59,7 @@ export default function ImageGallery({ fotos, alt }: ImageGalleryProps) {
       >
         <RetryImage
           src={fotos[atual]}
-          alt={`${alt} — foto ${atual + 1} de ${fotos.length}`}
+          alt={`${alt}, foto ${atual + 1} de ${fotos.length}`}
           fill
           unoptimized
           sizes="(max-width: 1024px) 100vw, 60vw"
@@ -148,7 +148,7 @@ export default function ImageGallery({ fotos, alt }: ImageGalleryProps) {
           >
             <RetryImage
               src={fotos[atual]}
-              alt={`${alt} — foto ${atual + 1} de ${fotos.length}`}
+              alt={`${alt}, foto ${atual + 1} de ${fotos.length}`}
               fill
               unoptimized
               sizes="92vw"

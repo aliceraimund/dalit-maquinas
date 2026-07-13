@@ -1,7 +1,7 @@
 import AdminMaquinaForm from '@/components/AdminMaquinaForm'
 
 export const metadata = {
-  title: 'Admin — Nova máquina',
+  title: 'Admin | Nova máquina',
   robots: { index: false, follow: false },
 }
 

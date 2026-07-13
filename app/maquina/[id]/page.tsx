@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: MaquinaPageProps): Promise<Me
 
   const descricao =
     maquina.descricao?.slice(0, 160) ??
-    `${maquina.tipo}${maquina.marca ? ` ${maquina.marca}` : ''}${maquina.modelo ? ` ${maquina.modelo}` : ''} — Gera Brasil`
+    `${maquina.tipo}${maquina.marca ? ` ${maquina.marca}` : ''}${maquina.modelo ? ` ${maquina.modelo}` : ''} | Gera Brasil`
 
   return {
     title: maquina.nome,

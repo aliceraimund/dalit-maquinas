@@ -13,7 +13,7 @@ export default function Footer() {
           <p className="text-xl font-extrabold tracking-tight">Gera Brasil</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-gray-400">
             Especialistas em geradores de energia e máquinas pesadas. Venda, locação, revisão,
-            instalação e manutenção — com frete para todo o Brasil.
+            instalação e manutenção, com frete para todo o Brasil.
           </p>
         </div>
 

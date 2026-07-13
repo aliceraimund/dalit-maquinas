@@ -6,7 +6,7 @@ import type { Maquina } from '@/types/maquina'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Admin — Editar máquina',
+  title: 'Admin | Editar máquina',
   robots: { index: false, follow: false },
 }
 

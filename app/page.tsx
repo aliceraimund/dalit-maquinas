@@ -229,7 +229,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 : 'Em breve novos equipamentos nesta categoria'}
             </p>
             <p className="mt-1 text-sm text-[var(--cor-texto-suave)]">
-              Fale com a gente — podemos encontrar o equipamento certo para a sua necessidade.
+              Fale com a gente: podemos encontrar o equipamento certo para a sua necessidade.
             </p>
             <div className="mt-5 flex flex-col items-center gap-2">
               <a
