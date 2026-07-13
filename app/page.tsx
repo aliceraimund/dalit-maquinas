@@ -128,11 +128,18 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-14 sm:pt-20">
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-black leading-tight tracking-tight sm:text-6xl">
-                GeraPeças Brasil
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--cor-acento)]">
+                Gera Brasil
+              </p>
+              <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
+                Quando tudo para, você precisa de uma{' '}
+                <span className="text-[#A9D6F5] [text-shadow:0_0_28px_rgba(147,197,253,0.55)]">
+                  Solução que Funciona
+                </span>
               </h1>
               <p className="mt-4 text-lg font-medium text-white/90 sm:text-xl">
-                Especialistas em geradores de energia — venda, locação e manutenção
+                Soluções em grupos <strong className="font-bold text-white">geradores de alta capacidade</strong> para
+                hospitais, indústrias e condomínios.
               </p>
 
               <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/80">
@@ -253,7 +260,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <section className="border-t border-[var(--cor-borda)] bg-[var(--cor-fundo-suave)]">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <h2 className="text-center text-2xl font-extrabold tracking-tight text-[var(--cor-texto)]">
-            Por que comprar com a GeraPeças Brasil?
+            Por que comprar com a Gera Brasil?
           </h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {DIFERENCIAIS.map(({ titulo, texto, icone }) => (

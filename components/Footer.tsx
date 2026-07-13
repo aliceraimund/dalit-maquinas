@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-[var(--cor-nav-fundo)] text-[var(--cor-nav-texto)]">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <p className="text-xl font-extrabold tracking-tight">GeraPeças Brasil</p>
+          <p className="text-xl font-extrabold tracking-tight">Gera Brasil</p>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-gray-400">
             Especialistas em geradores de energia e máquinas pesadas. Venda, locação, revisão,
             instalação e manutenção — com frete para todo o Brasil.
@@ -59,7 +59,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 py-5 text-center text-xs text-gray-500 sm:flex-row sm:justify-between sm:text-left">
-          <p>© {new Date().getFullYear()} GeraPeças Brasil. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Gera Brasil. Todos os direitos reservados.</p>
           <Link href="/admin/login" className="transition-colors hover:text-white">
             Área administrativa
           </Link>

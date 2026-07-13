@@ -38,7 +38,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-[var(--cor-fundo-suave)] px-4">
       <div className="w-full max-w-sm rounded-xl border border-[var(--cor-borda)] bg-white p-8 shadow-sm">
         <h1 className="text-center text-2xl font-bold text-[var(--cor-texto)]">
-          {'GeraPeças Brasil'}
+          {'Gera Brasil'}
         </h1>
         <p className="mt-1 text-center text-sm text-[var(--cor-texto-suave)]">Área administrativa</p>
 
