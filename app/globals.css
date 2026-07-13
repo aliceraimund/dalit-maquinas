@@ -27,13 +27,19 @@ body {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Hero: gradiente azul em camadas com brilho quente no canto e um
-   esmaecido em azul mais claro — tudo em CSS, sem imagem externa. */
+/* Hero: azul escuro no topo esmaecendo para branco na base, fundindo
+   com a barra de filtros logo abaixo — tudo em CSS, sem imagem externa. */
 .hero-bg {
   background:
-    radial-gradient(55% 70% at 82% 18%, rgba(255, 196, 46, 0.10), transparent 65%),
-    radial-gradient(75% 95% at 12% 90%, rgba(125, 170, 205, 0.28), transparent 70%),
-    linear-gradient(135deg, #14293A 0%, #274A63 55%, #46708F 100%);
+    radial-gradient(55% 70% at 82% 18%, rgba(255, 196, 46, 0.08), transparent 65%),
+    linear-gradient(
+      to top,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.9) 10%,
+      rgba(255, 255, 255, 0.45) 26%,
+      rgba(255, 255, 255, 0) 52%
+    ),
+    linear-gradient(180deg, #14293a 0%, #23445c 55%, #3a607f 100%);
 }
 
 /* Pulso de atenção do botão flutuante de WhatsApp */
