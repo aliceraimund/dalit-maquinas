@@ -69,11 +69,14 @@ export default function MaquinaCard({ maquina }: MaquinaCardProps) {
               {DISPONIVEL_LABELS[maquina.disponivel_para]}
             </span>
           )}
-          {maquina.categoria && (
-            <span className="rounded bg-[var(--cor-fundo-suave)] px-2 py-0.5 text-xs text-[var(--cor-texto-suave)]">
-              {CATEGORIA_LABELS[maquina.categoria]}
+          {maquina.categorias?.map((categoria) => (
+            <span
+              key={categoria}
+              className="rounded bg-[var(--cor-fundo-suave)] px-2 py-0.5 text-xs text-[var(--cor-texto-suave)]"
+            >
+              {CATEGORIA_LABELS[categoria]}
             </span>
-          )}
+          ))}
         </div>
 
         <h3 className="font-semibold leading-snug text-[var(--cor-texto)]">{maquina.nome}</h3>

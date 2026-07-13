@@ -164,7 +164,9 @@ export default function AdminMaquinaList({ maquinas }: AdminMaquinaListProps) {
                 <p className="mt-1 text-xs text-[var(--cor-texto-suave)]">
                   {[
                     maquina.tipo,
-                    maquina.categoria ? CATEGORIA_LABELS[maquina.categoria] : null,
+                    maquina.categorias?.length
+                      ? maquina.categorias.map((c) => CATEGORIA_LABELS[c]).join(', ')
+                      : null,
                     maquina.disponivel_para ? DISPONIVEL_LABELS[maquina.disponivel_para] : null,
                     `Criada em ${formatDate(maquina.criado_em)}`,
                   ]

@@ -61,7 +61,7 @@ export default async function Home({ searchParams }: HomeProps) {
     .order('destaque', { ascending: false })
     .order('criado_em', { ascending: false })
 
-  if (categoria) query = query.eq('categoria', categoria)
+  if (categoria) query = query.contains('categorias', [categoria])
   if (modalidade) query = query.in('disponivel_para', [modalidade, 'ambos'])
 
   const { data } = await query

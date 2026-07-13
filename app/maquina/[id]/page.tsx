@@ -69,7 +69,12 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
 
   const especificacoes: { label: string; valor: string }[] = [
     { label: 'Tipo', valor: maquina.tipo },
-    maquina.categoria ? { label: 'Categoria', valor: CATEGORIA_LABELS[maquina.categoria] } : null,
+    maquina.categorias?.length
+      ? {
+          label: maquina.categorias.length > 1 ? 'Categorias' : 'Categoria',
+          valor: maquina.categorias.map((c) => CATEGORIA_LABELS[c]).join(', '),
+        }
+      : null,
     maquina.marca ? { label: 'Marca', valor: maquina.marca } : null,
     maquina.modelo ? { label: 'Modelo', valor: maquina.modelo } : null,
     maquina.ano ? { label: 'Ano', valor: String(maquina.ano) } : null,
@@ -95,7 +100,7 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
     brand: maquina.marca ? { '@type': 'Brand', name: maquina.marca } : undefined,
     model: maquina.modelo ?? undefined,
     offers:
-      !maquina.valor_consultar && maquina.preco_venda != null
+      !maquina.venda_sob_consulta && maquina.preco_venda != null
         ? {
             '@type': 'Offer',
             price: maquina.preco_venda,
@@ -162,14 +167,16 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
 
             <section className="mt-6">
               <h2 className="text-lg font-semibold text-[var(--cor-texto)]">Especificações</h2>
-              <dl className="mt-3 grid grid-cols-1 gap-x-6 sm:grid-cols-2">
+              <dl className="mt-3">
                 {especificacoes.map(({ label, valor }) => (
                   <div
                     key={label}
-                    className="flex justify-between gap-4 border-b border-[var(--cor-borda)] py-2 text-sm"
+                    className="flex items-center justify-between gap-4 border-b border-[var(--cor-borda)] py-2.5 text-sm"
                   >
-                    <dt className="text-[var(--cor-texto-suave)]">{label}</dt>
-                    <dd className="font-medium text-[var(--cor-texto)]">{valor}</dd>
+                    <dt className="shrink-0 text-[var(--cor-texto-suave)]">{label}</dt>
+                    <dd className="rounded-md bg-[var(--cor-fundo-suave)] px-2.5 py-1 text-right font-medium text-[var(--cor-texto)]">
+                      {valor}
+                    </dd>
                   </div>
                 ))}
               </dl>
@@ -178,9 +185,11 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
             {maquina.descricao && (
               <section className="mt-6">
                 <h2 className="text-lg font-semibold text-[var(--cor-texto)]">Descrição</h2>
-                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-[var(--cor-texto-suave)]">
-                  {maquina.descricao}
-                </p>
+                <div className="mt-3 rounded-xl border border-[var(--cor-borda)] bg-[var(--cor-fundo-suave)] p-4 sm:p-5">
+                  <p className="whitespace-pre-line text-sm leading-relaxed text-[var(--cor-texto-suave)]">
+                    {maquina.descricao}
+                  </p>
+                </div>
               </section>
             )}
           </div>

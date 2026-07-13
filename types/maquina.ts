@@ -8,7 +8,7 @@ export interface Maquina {
   id: string
   nome: string
   tipo: string
-  categoria: Categoria | null
+  categorias: Categoria[] | null
   marca: string | null
   modelo: string | null
   ano: number | null
@@ -21,7 +21,8 @@ export interface Maquina {
   disponivel_para: DisponivelPara | null
   preco_venda: number | null
   preco_locacao: number | null
-  valor_consultar: boolean
+  venda_sob_consulta: boolean
+  locacao_sob_consulta: boolean
   status: Status | null
   fotos: string[] | null
   descricao: string | null

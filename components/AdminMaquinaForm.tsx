@@ -22,7 +22,7 @@ interface AdminMaquinaFormProps {
 interface FormState {
   nome: string
   tipo: string
-  categoria: Categoria | ''
+  categorias: Categoria[]
   marca: string
   modelo: string
   ano: string
@@ -35,7 +35,8 @@ interface FormState {
   disponivel_para: DisponivelPara | ''
   preco_venda: string
   preco_locacao: string
-  valor_consultar: boolean
+  venda_sob_consulta: boolean
+  locacao_sob_consulta: boolean
   status: Status | ''
   destaque: boolean
   publicado: boolean
@@ -55,7 +56,7 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
   const [form, setForm] = useState<FormState>({
     nome: maquina?.nome ?? '',
     tipo: maquina?.tipo ?? '',
-    categoria: maquina?.categoria ?? '',
+    categorias: maquina?.categorias ?? [],
     marca: maquina?.marca ?? '',
     modelo: maquina?.modelo ?? '',
     ano: maquina?.ano != null ? String(maquina.ano) : '',
@@ -68,7 +69,8 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
     disponivel_para: maquina?.disponivel_para ?? '',
     preco_venda: maquina?.preco_venda != null ? String(maquina.preco_venda) : '',
     preco_locacao: maquina?.preco_locacao != null ? String(maquina.preco_locacao) : '',
-    valor_consultar: maquina?.valor_consultar ?? false,
+    venda_sob_consulta: maquina?.venda_sob_consulta ?? false,
+    locacao_sob_consulta: maquina?.locacao_sob_consulta ?? false,
     status: maquina?.status ?? 'disponivel',
     destaque: maquina?.destaque ?? false,
     publicado: maquina?.publicado ?? true,
@@ -81,6 +83,15 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
 
   function set<K extends keyof FormState>(campo: K, valor: FormState[K]) {
     setForm((f) => ({ ...f, [campo]: valor }))
+  }
+
+  function toggleCategoria(categoria: Categoria) {
+    setForm((f) => ({
+      ...f,
+      categorias: f.categorias.includes(categoria)
+        ? f.categorias.filter((c) => c !== categoria)
+        : [...f.categorias, categoria],
+    }))
   }
 
   async function handleUpload(e: ChangeEvent<HTMLInputElement>) {
@@ -162,7 +173,7 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
     const payload = {
       nome: form.nome.trim(),
       tipo: form.tipo.trim(),
-      categoria: form.categoria || null,
+      categorias: form.categorias.length > 0 ? form.categorias : null,
       marca: form.marca.trim() || null,
       modelo: form.modelo.trim() || null,
       ano: form.ano ? parseInt(form.ano, 10) : null,
@@ -175,7 +186,8 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
       disponivel_para: form.disponivel_para || null,
       preco_venda: form.preco_venda ? parseFloat(form.preco_venda) : null,
       preco_locacao: form.preco_locacao ? parseFloat(form.preco_locacao) : null,
-      valor_consultar: form.valor_consultar,
+      venda_sob_consulta: form.venda_sob_consulta,
+      locacao_sob_consulta: form.locacao_sob_consulta,
       status: form.status || null,
       destaque: form.destaque,
       publicado: form.publicado,
@@ -219,13 +231,20 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
             <input id="tipo" type="text" required placeholder="Ex: Escavadeira, Empilhadeira" value={form.tipo} onChange={(e) => set('tipo', e.target.value)} className={inputClass} />
           </div>
           <div>
-            <label htmlFor="categoria" className={labelClass}>Categoria</label>
-            <select id="categoria" value={form.categoria} onChange={(e) => set('categoria', e.target.value as Categoria | '')} className={inputClass}>
-              <option value="">Sem categoria</option>
+            <span className={labelClass}>Categorias (marque todas que se aplicam)</span>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 pt-1.5">
               {(Object.keys(CATEGORIA_LABELS) as Categoria[]).map((c) => (
-                <option key={c} value={c}>{CATEGORIA_LABELS[c]}</option>
+                <label key={c} className="flex items-center gap-2 text-sm text-[var(--cor-texto)]">
+                  <input
+                    type="checkbox"
+                    checked={form.categorias.includes(c)}
+                    onChange={() => toggleCategoria(c)}
+                    className="h-4 w-4 accent-[var(--cor-primaria)]"
+                  />
+                  {CATEGORIA_LABELS[c]}
+                </label>
               ))}
-            </select>
+            </div>
           </div>
           <div>
             <label htmlFor="marca" className={labelClass}>Marca</label>
@@ -288,11 +307,19 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
           </div>
           <div>
             <label htmlFor="preco_venda" className={labelClass}>Preço de venda (R$)</label>
-            <input id="preco_venda" type="number" min="0" step="0.01" value={form.preco_venda} onChange={(e) => set('preco_venda', e.target.value)} className={inputClass} disabled={form.valor_consultar} />
+            <input id="preco_venda" type="number" min="0" step="0.01" value={form.preco_venda} onChange={(e) => set('preco_venda', e.target.value)} className={inputClass} disabled={form.venda_sob_consulta} />
+            <label className="mt-1.5 flex items-center gap-2 text-xs text-[var(--cor-texto-suave)]">
+              <input type="checkbox" checked={form.venda_sob_consulta} onChange={(e) => set('venda_sob_consulta', e.target.checked)} className="h-3.5 w-3.5 accent-[var(--cor-primaria)]" />
+              Sob consulta (não exibe o valor de venda)
+            </label>
           </div>
           <div>
             <label htmlFor="preco_locacao" className={labelClass}>Preço de locação (R$)</label>
-            <input id="preco_locacao" type="number" min="0" step="0.01" value={form.preco_locacao} onChange={(e) => set('preco_locacao', e.target.value)} className={inputClass} disabled={form.valor_consultar} />
+            <input id="preco_locacao" type="number" min="0" step="0.01" value={form.preco_locacao} onChange={(e) => set('preco_locacao', e.target.value)} className={inputClass} disabled={form.locacao_sob_consulta} />
+            <label className="mt-1.5 flex items-center gap-2 text-xs text-[var(--cor-texto-suave)]">
+              <input type="checkbox" checked={form.locacao_sob_consulta} onChange={(e) => set('locacao_sob_consulta', e.target.checked)} className="h-3.5 w-3.5 accent-[var(--cor-primaria)]" />
+              Sob consulta (não exibe o valor de locação)
+            </label>
           </div>
           <div>
             <label htmlFor="status" className={labelClass}>Status</label>
@@ -303,10 +330,6 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
             </select>
           </div>
           <div className="flex flex-col justify-end gap-2 sm:col-span-2">
-            <label className="flex items-center gap-2 text-sm text-[var(--cor-texto)]">
-              <input type="checkbox" checked={form.valor_consultar} onChange={(e) => set('valor_consultar', e.target.checked)} className="h-4 w-4 accent-[var(--cor-primaria)]" />
-              Valor sob consulta (oculta os preços)
-            </label>
             <label className="flex items-center gap-2 text-sm text-[var(--cor-texto)]">
               <input type="checkbox" checked={form.destaque} onChange={(e) => set('destaque', e.target.checked)} className="h-4 w-4 accent-[var(--cor-primaria)]" />
               Destaque na homepage
