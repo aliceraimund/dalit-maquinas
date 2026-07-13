@@ -132,8 +132,8 @@ export default async function Home({ searchParams }: HomeProps) {
                 Gera Brasil
               </p>
               <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
-                Quando tudo para, você precisa de uma{' '}
-                <span className="text-[#A9D6F5] [text-shadow:0_0_28px_rgba(147,197,253,0.55)]">
+                Quando tudo para, você precisa de uma
+                <span className="block text-[#A9D6F5] [text-shadow:0_0_28px_rgba(147,197,253,0.55)]">
                   Solução que Funciona
                 </span>
               </h1>
