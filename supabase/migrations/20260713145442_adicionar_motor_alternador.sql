@@ -1,4 +1,4 @@
 -- Campos específicos de grupos geradores (motor e alternador aparecem
--- em praticamente todos os anúncios da Gera Brasil).
+-- em praticamente todos os anúncios da Gera Peças).
 ALTER TABLE maquinas ADD COLUMN IF NOT EXISTS motor text;
 ALTER TABLE maquinas ADD COLUMN IF NOT EXISTS alternador text;

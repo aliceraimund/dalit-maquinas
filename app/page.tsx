@@ -128,7 +128,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-[var(--cor-acento)]">
-                Gera Brasil
+                Gera Peças
               </p>
               <h1 className="mt-3 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
                 Quando tudo para, você precisa de uma
@@ -271,7 +271,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <section className="border-t border-[var(--cor-borda)] bg-[var(--cor-fundo-suave)]">
         <div className="mx-auto max-w-6xl px-4 py-12">
           <h2 className="text-center text-2xl font-extrabold tracking-tight text-[var(--cor-texto)]">
-            Por que comprar com a Gera Brasil?
+            Por que comprar com a Gera Peças?
           </h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {DIFERENCIAIS.map(({ titulo, texto, icone }) => (

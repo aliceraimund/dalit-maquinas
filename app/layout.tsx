@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 const SITE_URL = 'https://gerapecas.vercel.app'
-const NOME_EMPRESA = 'Gera Brasil'
+const NOME_EMPRESA = 'Gera Peças'
 const DESCRICAO =
   'Quando tudo para, você precisa de uma solução que funciona. Grupos geradores de alta capacidade para hospitais, indústrias e condomínios: venda, locação e manutenção.'
 

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: MaquinaPageProps): Promise<Me
 
   const descricao =
     maquina.descricao?.slice(0, 160) ??
-    `${maquina.tipo}${maquina.marca ? ` ${maquina.marca}` : ''}${maquina.modelo ? ` ${maquina.modelo}` : ''} | Gera Brasil`
+    `${maquina.tipo}${maquina.marca ? ` ${maquina.marca}` : ''}${maquina.modelo ? ` ${maquina.modelo}` : ''} | Gera Peças`
 
   return {
     title: maquina.nome,
@@ -128,7 +128,7 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
       <header className="bg-[var(--cor-nav-fundo)] text-[var(--cor-nav-texto)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="text-lg font-bold">
-            {'Gera Brasil'}
+            {'Gera Peças'}
           </Link>
           <Link
             href="/"
@@ -216,7 +216,7 @@ export default async function MaquinaPage({ params }: MaquinaPageProps) {
               </a>
 
               <p className="text-center text-sm font-bold text-[var(--cor-texto)]">
-                {'Gera Brasil'}
+                {'Gera Peças'}
               </p>
             </div>
           </aside>
