@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useRef, useState, type ChangeEvent, type FormEvent } from 'react'
 import RetryImage from '@/components/RetryImage'
 import { createClient } from '@/lib/supabase/client'
-import { CATEGORIA_LABELS, DISPONIVEL_LABELS, STATUS_LABELS } from '@/lib/utils'
+import { DISPONIVEL_LABELS, STATUS_LABELS } from '@/lib/utils'
 import type { Categoria, DisponivelPara, Maquina, Status } from '@/types/maquina'
 
 const TIPOS_ACEITOS = ['image/jpeg', 'image/png', 'image/webp']
@@ -83,15 +83,6 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
 
   function set<K extends keyof FormState>(campo: K, valor: FormState[K]) {
     setForm((f) => ({ ...f, [campo]: valor }))
-  }
-
-  function toggleCategoria(categoria: Categoria) {
-    setForm((f) => ({
-      ...f,
-      categorias: f.categorias.includes(categoria)
-        ? f.categorias.filter((c) => c !== categoria)
-        : [...f.categorias, categoria],
-    }))
   }
 
   async function handleUpload(e: ChangeEvent<HTMLInputElement>) {
@@ -229,22 +220,6 @@ export default function AdminMaquinaForm({ maquina }: AdminMaquinaFormProps) {
           <div>
             <label htmlFor="tipo" className={labelClass}>Tipo *</label>
             <input id="tipo" type="text" required placeholder="Ex: Escavadeira, Empilhadeira" value={form.tipo} onChange={(e) => set('tipo', e.target.value)} className={inputClass} />
-          </div>
-          <div>
-            <span className={labelClass}>Categorias (marque todas que se aplicam)</span>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 pt-1.5">
-              {(Object.keys(CATEGORIA_LABELS) as Categoria[]).map((c) => (
-                <label key={c} className="flex items-center gap-2 text-sm text-[var(--cor-texto)]">
-                  <input
-                    type="checkbox"
-                    checked={form.categorias.includes(c)}
-                    onChange={() => toggleCategoria(c)}
-                    className="h-4 w-4 accent-[var(--cor-primaria)]"
-                  />
-                  {CATEGORIA_LABELS[c]}
-                </label>
-              ))}
-            </div>
           </div>
           <div>
             <label htmlFor="marca" className={labelClass}>Marca</label>
