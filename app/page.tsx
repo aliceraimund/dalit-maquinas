@@ -190,21 +190,23 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
 
             <div className="shrink-0 self-center md:self-auto">
-              {/* Brilho branco sutil separando a logo do fundo azul do hero */}
-              <RetryImage
-                src="/logo.png"
-                alt="Gera Peças Brasil"
-                width={1000}
-                height={446}
-                unoptimized
-                priority
-                className="h-auto w-72 sm:w-96 [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.85))_drop-shadow(0_2px_24px_rgba(255,255,255,0.4))]"
-                fallback={
-                  <span className="block py-6 text-center text-2xl font-black tracking-tight text-white">
-                    Gera Peças Brasil
-                  </span>
-                }
-              />
+              {/* Cartão branco arredondado para a logo ficar legível sobre o hero */}
+              <div className="rounded-2xl bg-white px-6 py-5 shadow-xl sm:px-8 sm:py-6">
+                <RetryImage
+                  src="/logo.png"
+                  alt="Gera Peças Brasil"
+                  width={1000}
+                  height={446}
+                  unoptimized
+                  priority
+                  className="h-auto w-64 sm:w-80"
+                  fallback={
+                    <span className="block py-6 text-center text-2xl font-black tracking-tight text-[#1f9d1f]">
+                      Gera Peças Brasil
+                    </span>
+                  }
+                />
+              </div>
             </div>
           </div>
 
