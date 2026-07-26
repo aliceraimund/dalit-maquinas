@@ -33,8 +33,8 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: NOME_EMPRESA,
   url: SITE_URL,
-  telephone: '(11) 2668-0200',
-  email: 'contato@gerabrasil.com',
+  telephone: '+55 11 96827-8192',
+  email: 'talita@gerapecasbrasil.com.br',
 }
 
 export default function RootLayout({

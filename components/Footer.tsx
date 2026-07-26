@@ -21,8 +21,8 @@ export default function Footer() {
           <p className="text-sm font-bold uppercase tracking-wide text-gray-300">Contato</p>
           <ul className="mt-3 space-y-2 text-sm text-gray-400">
             <li>
-              <a href="tel:+551126680200" className="transition-colors hover:text-white">
-                (11) 2668-0200
+              <a href="tel:+5511968278192" className="transition-colors hover:text-white">
+                (11) 96827-8192
               </a>
             </li>
             <li>
@@ -36,8 +36,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:contato@gerabrasil.com" className="transition-colors hover:text-white">
-                contato@gerabrasil.com
+              <a href="mailto:talita@gerapecasbrasil.com.br" className="transition-colors hover:text-white">
+                talita@gerapecasbrasil.com.br
               </a>
             </li>
             <li>
