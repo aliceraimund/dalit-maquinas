@@ -189,9 +189,8 @@ export default async function Home({ searchParams }: HomeProps) {
               </p>
             </div>
 
-            <div className="shrink-0 self-center md:self-auto">
-              {/* Esmaecido que acompanha o contorno da logo (drop-shadow segue
-                  o canal de transparência), suave para não lavar o texto */}
+            <div className="relative shrink-0 self-center md:self-auto">
+              {/* Logo completa, sem brilho */}
               <RetryImage
                 src="/logo.png"
                 alt="Gera Peças Brasil"
@@ -199,12 +198,20 @@ export default async function Home({ searchParams }: HomeProps) {
                 height={446}
                 unoptimized
                 priority
-                className="h-auto w-80 sm:w-[28rem] [filter:drop-shadow(0_0_7px_rgba(255,255,255,0.6))_drop-shadow(0_0_16px_rgba(255,255,255,0.35))]"
+                className="h-auto w-80 sm:w-[28rem]"
                 fallback={
                   <span className="block py-6 text-center text-2xl font-black tracking-tight text-white">
                     Gera Peças Brasil
                   </span>
                 }
+              />
+              {/* Camada só com o mapa, alinhada por cima, para o esmaecido
+                  (drop-shadow) contornar apenas o símbolo do Brasil */}
+              <img
+                src="/logo-mapa.png"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 h-full w-full object-contain [filter:drop-shadow(0_0_7px_rgba(255,255,255,0.65))_drop-shadow(0_0_16px_rgba(255,255,255,0.4))]"
               />
             </div>
           </div>
