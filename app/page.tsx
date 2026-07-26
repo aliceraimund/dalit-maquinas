@@ -189,13 +189,9 @@ export default async function Home({ searchParams }: HomeProps) {
               </p>
             </div>
 
-            <div className="relative shrink-0 self-center md:self-auto">
-              {/* Esmaecido suave: um brilho branco difuso atrás da logo,
-                  o bastante para separar do fundo azul sem lavar o texto */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -z-0 rounded-full bg-white/35 blur-2xl"
-              />
+            <div className="shrink-0 self-center md:self-auto">
+              {/* Esmaecido que acompanha o contorno da logo (drop-shadow segue
+                  o canal de transparência), suave para não lavar o texto */}
               <RetryImage
                 src="/logo.png"
                 alt="Gera Peças Brasil"
@@ -203,9 +199,9 @@ export default async function Home({ searchParams }: HomeProps) {
                 height={446}
                 unoptimized
                 priority
-                className="relative h-auto w-72 sm:w-96"
+                className="h-auto w-80 sm:w-[28rem] [filter:drop-shadow(0_0_7px_rgba(255,255,255,0.6))_drop-shadow(0_0_16px_rgba(255,255,255,0.35))]"
                 fallback={
-                  <span className="relative block py-6 text-center text-2xl font-black tracking-tight text-white">
+                  <span className="block py-6 text-center text-2xl font-black tracking-tight text-white">
                     Gera Peças Brasil
                   </span>
                 }
