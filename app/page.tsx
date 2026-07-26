@@ -190,19 +190,18 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
 
             <div className="shrink-0 self-center md:self-auto">
-              {/* Brilho branco acompanhando o contorno da logo (a escrita é azul,
-                  da cor do fundo) — sem balão, integrado ao gradiente do hero */}
+              {/* Brilho branco sutil separando a logo do fundo azul do hero */}
               <RetryImage
                 src="/logo.png"
-                alt="GeraBrasil"
-                width={420}
-                height={280}
+                alt="Gera Peças Brasil"
+                width={1000}
+                height={446}
                 unoptimized
                 priority
-                className="h-auto w-72 sm:w-96 [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.9))_drop-shadow(0_2px_30px_rgba(255,255,255,0.55))]"
+                className="h-auto w-72 sm:w-96 [filter:drop-shadow(0_0_10px_rgba(255,255,255,0.85))_drop-shadow(0_2px_24px_rgba(255,255,255,0.4))]"
                 fallback={
                   <span className="block py-6 text-center text-2xl font-black tracking-tight text-white">
-                    GERA BRASIL
+                    Gera Peças Brasil
                   </span>
                 }
               />
