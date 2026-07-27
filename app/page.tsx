@@ -175,18 +175,6 @@ export default async function Home({ searchParams }: HomeProps) {
                   Falar no WhatsApp
                 </a>
               </div>
-
-              <p className="mt-5 text-sm text-white/70">
-                Conheça também nosso site institucional:{' '}
-                <a
-                  href="https://gerabrasil.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-white underline underline-offset-4 transition-colors hover:text-[var(--cor-acento)]"
-                >
-                  gerabrasil.com
-                </a>
-              </p>
             </div>
 
             <div className="relative shrink-0 self-center md:self-auto">

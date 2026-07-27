@@ -40,16 +40,6 @@ export default function Footer() {
                 talita@gerapecasbrasil.com.br
               </a>
             </li>
-            <li>
-              <a
-                href="https://gerabrasil.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-white"
-              >
-                Site institucional: gerabrasil.com
-              </a>
-            </li>
           </ul>
         </div>
 
