@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const WHATSAPP = '5511995998514'
+const WHATSAPP = '5511968278192'
 
 export default function WhatsAppFloat() {
   const [mostraBalao, setMostraBalao] = useState(false)

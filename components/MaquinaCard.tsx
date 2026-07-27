@@ -10,7 +10,7 @@ import {
 } from '@/lib/utils'
 import type { Maquina } from '@/types/maquina'
 
-const WHATSAPP = '5511995998514'
+const WHATSAPP = '5511968278192'
 
 interface MaquinaCardProps {
   maquina: Maquina

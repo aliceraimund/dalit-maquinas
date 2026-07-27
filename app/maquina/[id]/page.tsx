@@ -17,7 +17,7 @@ import {
 import type { Maquina } from '@/types/maquina'
 
 const SITE_URL = 'https://gerapecas.vercel.app'
-const WHATSAPP = '5511995998514'
+const WHATSAPP = '5511968278192'
 
 interface MaquinaPageProps {
   params: Promise<{ id: string }>

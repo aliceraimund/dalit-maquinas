@@ -10,7 +10,7 @@ import type { Categoria, DisponivelPara, Maquina } from '@/types/maquina'
 
 export const dynamic = 'force-dynamic'
 
-const WHATSAPP = '5511995998514'
+const WHATSAPP = '5511968278192'
 const CATEGORIAS_VALIDAS: Categoria[] = ['construcao', 'industrial', 'agricola', 'transporte']
 const MODALIDADES_VALIDAS: DisponivelPara[] = ['venda', 'locacao']
 

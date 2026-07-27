@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { CATEGORIA_LABELS } from '@/lib/utils'
 import type { Categoria } from '@/types/maquina'
 
-const WHATSAPP = '5511995998514'
+const WHATSAPP = '5511968278192'
 const CATEGORIAS: Categoria[] = ['construcao', 'industrial', 'agricola', 'transporte']
 
 export default function Footer() {
@@ -32,7 +32,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-white"
               >
-                WhatsApp: (11) 99599-8514
+                WhatsApp: (11) 96827-8192
               </a>
             </li>
             <li>
